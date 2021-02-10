@@ -27,8 +27,26 @@
         <label id = 'American Samoa'>American Samoa</label><br>
         <input type = 'radio' name = 'timezone' value = 'Chamorro' id = 'Chamorro'>
         <label id = 'Chamorro'>Chamorro</label><br>
-        <button type = 'button' value = 'Submit'>Submit</button><br>
+        <button type = 'button' value = 'Submit' onclick = 'myfunc()'>Submit</button><br>
         <div id = 'Clock'></div>
     </form>
+    <script type = 'text/javascript'>
+        function myfunc()
+        {
+            var radiobuttons = document.getElementsByName('timezone');
+            var selected = 'x'
+            for(var i =0; i < radiobuttons.length; i++)
+            {
+                if(radiobuttons[i].checked == true)
+                {
+                    selected = radiobuttons[i];
+                }
+            
+        
+            }
+            var elem = document.getElementById('Clock');
+            elem.innerHTML = selected.value;
+        }
+    </script>
 </body>
 </html>
