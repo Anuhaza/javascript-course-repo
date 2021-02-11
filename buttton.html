@@ -27,7 +27,7 @@
         <label id = 'American Samoa'>American Samoa</label><br>
         <input type = 'radio' name = 'timezone' value = 'Chamorro' id = 'Chamorro'>
         <label id = 'Chamorro'>Chamorro</label><br>
-        <button type = 'button' value = 'Submit' onclick = 'myfunc()'>Submit</button><br>
+        <button type = 'button' value = 'Submit' onclick = 'secondfunc()'>Submit</button><br>
         <div id = 'Clock'></div>
     </form>
     <script type = 'text/javascript'>
@@ -47,6 +47,38 @@
             var elem = document.getElementById('Clock');
             elem.innerHTML = selected.value;
         }
+        function secondfunc()
+        {
+            var mydate = new Date();
+            var myhour = mydate.getHours();
+            var myminute = mydate.getMinutes();
+            var mysecond = mydate.getSeconds();
+            if(myhour < 12)
+            {
+                var session = 'AM';
+            }
+            else if(myhour > 12)
+            {
+                if(myhour!=24)
+                {
+                    myhour = myhour - 12;
+                    var session = 'PM';
+                }
+                else
+                {
+                    myhour = myhour - 12;
+                    var session = 'AM';
+                }
+            }
+            else if(myhour == 12)
+            {
+                var session = 'PM';
+            }
+            var mytime = myhour + ':' + myminute + ':' + mysecond + ' ' + session;
+            var elem = document.getElementById('Clock');
+            elem.innerHTML = mytime;
+        }
+        setTimeout(secondfunc, 1000)
     </script>
 </body>
 </html>
