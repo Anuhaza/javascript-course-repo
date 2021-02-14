@@ -21,8 +21,6 @@
         <label id = 'Alaska'>Alaska</label><br>
         <input type = 'radio' name = 'timezone' value = 'Hawai-Aleutian' id = 'Hawai-Aleutian'>
         <label id = 'Hawai-Aleutian'>Hawai-Aleutian</label><br>
-        <input type = 'radio' name = 'timezone' value = 'Atlantic' id = 'Atlantic'>
-        <label id = 'Atlantic'>Atlantic</label><br>
         <input type = 'radio' name = 'timezone' value = 'American Samoa' id = 'American Samoa'>
         <label id = 'American Samoa'>American Samoa</label><br>
         <input type = 'radio' name = 'timezone' value = 'Chamorro' id = 'Chamorro'>
@@ -44,8 +42,9 @@
             
         
             }
-            var elem = document.getElementById('Clock');
-            elem.innerHTML = selected.value;
+            //var elem = document.getElementById('Clock');
+            //elem.innerHTML = selected.value;
+            return selected.value;
         }
         function secondfunc()
         {
@@ -53,6 +52,7 @@
             var myhour = mydate.getHours();
             var myminute = mydate.getMinutes();
             var mysecond = mydate.getSeconds();
+            var zone;
             if(myhour < 12)
             {
                 var session = 'AM';
@@ -70,15 +70,62 @@
                     var session = 'AM';
                 }
             }
-            else if(myhour == 12)
+            else if(myhour == 0)
             {
+                myhour = 12;
                 var session = 'PM';
             }
+            zone = myfunc();
+
+            if (zone == 'Atlantic')
+            {
+                myhour = myhour + 4;
+            }
+            else if (zone == 'Eastern')
+            {
+                myhour = myhour + 3;
+            }
+            else if (zone == 'Central')
+            {
+                myhour = myhour + 2;
+            }
+            else if (zone == 'Alaska')
+            {
+                myhour = myhour - 1;
+            }
+            else if (zone == 'Hawai-Aleutian')
+            {
+                myhour = myhour - 2;
+            }
+            else if (zone == 'American Samoa')
+            {
+                myhour = myhour - 3;
+            }
+            else if (zone == 'Chamorro')
+            {
+                myhour = myhour - 6;
+            }
+            if (myhour == 0)
+            {
+                myhour = 12;
+            }
+
+            if (myhour < 10) {
+                myhour = '0' + myhour;
+            }
+            if (myminute < 10) {
+                myminute = '0' + myminute;
+            }
+            if (mysecond < 10) {
+                mysecond = '0' + mysecond;
+            }
+
             var mytime = myhour + ':' + myminute + ':' + mysecond + ' ' + session;
             var elem = document.getElementById('Clock');
             elem.innerHTML = mytime;
+            setTimeout(secondfunc, 1000);
         }
-        setTimeout(secondfunc, 1000)
     </script>
+    
 </body>
 </html>
