@@ -13,3 +13,8 @@ body {
     padding-top: 8px;
     background-color: rgb(236, 202, 129);
 }
+
+#timezone{
+    font-family: Arial, Helvetica, sans-serif;
+    color: red;
+}
