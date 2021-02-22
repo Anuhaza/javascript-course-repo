@@ -81,4 +81,17 @@ function printTime(){
     document.getElementById("digital clock").innerHTML = time;
     setTimeout(printTime, 1000);
 }
-printTime()
+printTime();
+function setDigital(){
+    var digital = document.getElementById("digital clock");
+    var analog = document.getElementById("clock");
+    digital.style.display = "flex";
+    analog.style.display = "none";
+}
+function setAnalog(){
+    var analog = document.getElementById("clock");
+    var digital = document.getElementById("digital clock");
+    analog.style.display = "flex";
+    digital.style.display = "none";
+}
+setAnalog()

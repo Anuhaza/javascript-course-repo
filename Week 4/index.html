@@ -33,9 +33,9 @@
     </form>
     <form>
         <div class="view">
-            <input type="radio" id="digital" name="view" value="digital">
+            <input type="radio" id="digital" name="view" value="digital" onclick="setDigital()">
             <label for="digital">Digital</label><br>
-            <input type="radio" id="analog" name="view" value="analog">
+            <input type="radio" id="analog" name="view" value="analog" onclick = "setAnalog()" checked>
             <label for="analog">Analog</label><br>
         </div>
     </form>
@@ -57,10 +57,5 @@
         <div class="hand second" data-second-hand></div>
     </div>
     <div class="digital" id="digital clock"></div>
-
-    <script>
-        showTime();
-        printTime();
-    </script>
 </body>
 </html>
