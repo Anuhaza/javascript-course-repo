@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "style.css"></link>
+    <script defer src="script.js"></script>
+    <title>U.S. Timezone Clocks</title>
+</head>
+<body>
+    <form>
+        <p>Select your timezone:</p>
+        <input type = 'radio' name = 'timezone' value = 'Atlantic' id = 'Atlantic'>
+        <label id = 'Atlantic'>Atlantic Standard Time</label><br>
+        <input type = 'radio' name = 'timezone' value = 'Eastern' id = 'Eastern'>
+        <label id = 'Eastern'>Eastern Standard Time</label><br>
+        <input type = 'radio' name = 'timezone' value = 'Central' id = 'Central'>
+        <label id = 'Central'>Central Standard Time</label><br>
+        <input type = 'radio' name = 'timezone' value = 'Pacific' id = 'Pacific'>
+        <label id = 'Pacific'>Pacific Standard Time</label><br>
+        <input type = 'radio' name = 'timezone' value = 'Alaska' id = 'Alaska'>
+        <label id = 'Alaska'>Alaska Standard Time</label><br>
+        <input type = 'radio' name = 'timezone' value = 'Hawai-Aleutian' id = 'Hawai-Aleutian'>
+        <label id = 'Hawai-Aleutian'>Hawai-Aleutian Standard Time</label><br>
+        <input type = 'radio' name = 'timezone' value = 'American Samoa' id = 'American Samoa'>
+        <label id = 'American Samoa'>American Samoa Standard Time</label><br>
+        <input type = 'radio' name = 'timezone' value = 'Chamorro' id = 'Chamorro'>
+        <label id = 'Chamorro'>Chamorro Standard Time</label><br>
+        <br>
+        <button type = 'button' value = 'Submit' onclick="myfunc()">Submit</button>
+        <p id = "result"></p>
+    </form>
+
+    <div class = "clock" id = "clock"></div>
+
+    <script>
+    /*var offset = 0;
+        function myfunc(){
+            var radiobuttons = document.getElementsByName("timezone");
+            var selected = radiobuttons[0].value;
+            for (var i = 0; i < radiobuttons.length; i++){
+                if (radiobuttons[i].checked){
+                    selected = radiobuttons[i].value;
+                    break;
+                }
+            }
+            document.getElementById("result").innerHTML = selected
+            if (selected == "Atlantic"){
+                offset = 4
+            }
+            else if(selected == "Eastern"){
+                offset = 3
+            }
+            else if(selected == "Central"){
+                offset = 2
+            }
+            else if(selected == "Alaska"){
+                offset = -1
+            }
+            else if(selected == "Hawai-Aleutian"){
+                offset = -2
+            }
+            else if(selected == "American Samoa"){
+                offset = -3
+            }
+            else if(selected == "Chamorro"){
+                offset = -6
+            }
+            printTime();
+        }   
+
+        function printTime(){
+            var day = new Date();
+            var hour = day.getHours() + offset;
+            var minutes = day.getMinutes();
+            var seconds = day.getSeconds();
+            var session = "AM";
+
+            if (hour == 0){
+                hour = 12;
+                session = "AM";
+            }
+
+            else if (hour > 12){
+                hour = hour - 12;
+                session = "PM"
+            }
+
+            if (hour < 10){
+                hour = '0' + hour
+            }
+
+            if (minutes < 10){
+                minutes = '0' + minutes
+            }
+
+            if (seconds < 10){
+                seconds = '0' + seconds
+            }
+
+            var time = hour + ":" + minutes + ":" + seconds + " " + session;
+            document.getElementById("clock").innerHTML = time;
+            setTimeout(printTime, 1000);
+        }
+        printTime();*/
+    </script>
+</body>
+</html>
